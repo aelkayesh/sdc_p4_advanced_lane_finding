@@ -19,6 +19,9 @@ The goals / steps of this project are the following:
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
+[image7]: ./examples/undistorted.png "undistorted"
+[image8]: ./examples/pipeline.png "Pipeline"
+[image9]: ./examples/perspective.png "Warped"
 [video1]: ./project_output.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -43,7 +46,7 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![alt text][image1]
+![alt text][image7]
 
 ### Pipeline (single images)
 
@@ -56,7 +59,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at function pipeline).  Here's an example of my output for this step. 
 
-![alt text][image3]
+![alt text][image8]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -71,7 +74,12 @@ dst = np.float32([[offset, offset], [img_size[0]-offset, offset],
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][image4]
+![alt text][image4]!
+Another example of a warped image:
+
+[alt text][image9]
+
+
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
